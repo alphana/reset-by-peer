@@ -1,5 +1,8 @@
 /.idea/
-/demo-backing-app/demo-backing-app/
-/demo-backing-app/.idea
-/demo-client-app/demo-client-app/.idea
-/demo-gateway/demo-gateway/.idea
+/demo-client-app/build/
+/demo-backing-app/build/
+/demo-client-app/build/
+/demo-gateway/build/
+/demo-backing-app/.gradle/
+/demo-client-app/.gradle/
+/demo-gateway/.gradle/
