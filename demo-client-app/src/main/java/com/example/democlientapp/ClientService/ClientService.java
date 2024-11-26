@@ -29,7 +29,7 @@ public class ClientService {
         log.info("service init done");
     }
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 2000)
     public void sendRequests() {
         try {
             // Send normal notification

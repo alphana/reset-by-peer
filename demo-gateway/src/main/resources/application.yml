@@ -1,10 +1,6 @@
 
-server:
-  port: 8991
-
 spring:
-  application:
-    name: demo-gateway
+
 #  cloud:
 #    gateway:
 #      httpclient:
@@ -14,20 +10,22 @@ spring:
     gateway:
       httpclient:
         wiretap: true
-        pool:
-          type: fixed
-          max-connections: 500
-          max-idle-time: 20s
-          max-life-time: 60s
-          acquire-timeout: 60000
+#        connect-timeout: 5000
+#        response-timeout: 30s  # Set to reproduce the issue
+#        pool:
+#          type: fixed
+#          max-connections: 500
+#          max-idle-time: 20s
+#          max-life-time: 60s
+#          acquire-timeout: 60000
 
 logging:
   level:
     root: INFO
-#    reactor.netty: DEBUG
-#    reactor.netty.http.client: DEBUG
-#    reactor.netty.connection.pool: DEBUG
-#    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
+    reactor.netty.http.client: DEBUG
+    reactor.netty.connection.pool: DEBUG
+    org.springframework.cloud.gateway: DEBUG
     org.springframework.web.reactive: DEBUG
 
 #spring:

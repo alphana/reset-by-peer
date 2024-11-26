@@ -1,0 +1,18 @@
+spring.application.name: demo-backing-app
+server:
+  port: 5001
+#  tomcat:
+#    connection-timeout: 35000
+#    keep-alive-timeout: 35000
+#    max-keep-alive-requests: 100
+
+logging:
+  level:
+    root: INFO
+    org:
+      apache:
+        tomcat: DEBUG
+        coyote: DEBUG
+        catalina: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

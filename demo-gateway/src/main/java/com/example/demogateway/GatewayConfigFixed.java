@@ -21,17 +21,6 @@ import java.time.Duration;
 @Profile("fix")
 public class GatewayConfigFixed {
 
-    @Bean
-    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-        return builder.routes()
-                .route("notifications-route", r -> r
-                        .path("/notifications")
-                        .uri("http://localhost:5001/notifications"))
-                .route("push-messages-route", r -> r
-                        .path("/push_messages")
-                        .uri("http://localhost:5001/push_messages"))
-                .build();
-    }
 
     @Bean
     public HttpClient httpClient() {
