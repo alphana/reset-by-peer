@@ -1,0 +1,14 @@
+spring.application.name: demo-reactive-backing-app
+server:
+  port: 5002
+
+logging:
+  level:
+    root: INFO
+    org:
+      apache:
+        tomcat: DEBUG
+        coyote: DEBUG
+        catalina: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

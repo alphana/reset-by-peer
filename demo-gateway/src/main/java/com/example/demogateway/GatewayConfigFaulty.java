@@ -18,21 +18,18 @@ import java.time.Duration;
 public class GatewayConfigFaulty {
 
 
-    @Bean
-    public HttpClient faultyHttpClient() {
-        return HttpClient.create()
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
-                .option(ChannelOption.SO_KEEPALIVE, true)
-                // Netty native transport options for keepalive
-                .option(EpollChannelOption.TCP_KEEPIDLE, 300)
-                .option(EpollChannelOption.TCP_KEEPINTVL, 60)
-                .option(EpollChannelOption.TCP_KEEPCNT, 8)
-                .responseTimeout(Duration.ofSeconds(35))  // Set slightly higher than observed timeout
-                .doOnConnected(conn ->
-                        conn.addHandlerLast(new ReadTimeoutHandler(35))  // Matches responseTimeout
-                                .addHandlerLast(new WriteTimeoutHandler(35))
-                );
-    }
+//    @Bean
+//    public HttpClient faultyHttpClient() {
+//        return HttpClient.create()
+//                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 60000)
+////                .option(ChannelOption.SO_KEEPALIVE, true)
+////                // Netty native transport options for keepalive
+////                .option(EpollChannelOption.TCP_KEEPIDLE, 300)
+////                .option(EpollChannelOption.TCP_KEEPINTVL, 60)
+////                .option(EpollChannelOption.TCP_KEEPCNT, 8)
+//                .responseTimeout(Duration.ofSeconds(60))  // Set slightly higher than observed timeout
+//                ;
+//    }
 
 
 }

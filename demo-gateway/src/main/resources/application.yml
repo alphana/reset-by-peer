@@ -1,4 +1,4 @@
-
+server.port: 8991
 spring:
 
 #  cloud:
@@ -6,10 +6,12 @@ spring:
 #      httpclient:
 #        connect-timeout: 5000
 #        response-timeout: 30s  # Set to reproduce the issue
-  cloud:
-    gateway:
-      httpclient:
-        wiretap: true
+
+#  cloud:
+#    gateway:
+#      httpclient:
+#        wiretap: true
+
 #        connect-timeout: 5000
 #        response-timeout: 30s  # Set to reproduce the issue
 #        pool:
@@ -22,20 +24,10 @@ spring:
 logging:
   level:
     root: INFO
-    reactor.netty: DEBUG
-    reactor.netty.http.client: DEBUG
-    reactor.netty.connection.pool: DEBUG
-    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http: DEBUG
     org.springframework.web.reactive: DEBUG
-
-#spring:
-#  cloud:
-#    gateway:
-#      httpclient:
-#        pool:
-#          max-idle-time: 20s
-#          max-life-time: 60s
-#          max-connections: 2
-#          type: fixed
-#        connect-timeout: 5000
-#        response-timeout: 15s
+    reactor.netty.http.client: DEBUG
+    reactor.netty.http.server: DEBUG
+    reactor.netty.core: DEBUG
+    org.springframework.http: DEBUG
+    io.netty.channel: DEBUG
