@@ -35,7 +35,7 @@ public class DemoClientApplication implements CommandLineRunner {
             System.out.println("Connecting and closing abruptly without sending data.");
             try {
                 WebClient.create(gatewayUrl)
-                        .get()
+                        .post()
                         .uri("/notifications")
                         .retrieve()
                         .bodyToMono(String.class)
@@ -44,7 +44,7 @@ public class DemoClientApplication implements CommandLineRunner {
                                 error -> System.out.println("Simulated abrupt connection closed."));
 
                 WebClient.create(gatewayUrl)
-                        .get()
+                        .post()
                         .uri("/push_messages")
                         .retrieve()
                         .bodyToMono(String.class)
@@ -61,7 +61,7 @@ public class DemoClientApplication implements CommandLineRunner {
             // Send a proper REST call and handle normally
             System.out.println("Sending normal REST call to gateway.");
             WebClient.create(gatewayUrl)
-                    .get()
+                    .post()
                     .uri("/notifications")
                     .retrieve()
                     .bodyToMono(String.class)
@@ -70,7 +70,7 @@ public class DemoClientApplication implements CommandLineRunner {
                     .timeout(Duration.ofSeconds(5))
                     .subscribe();
             WebClient.create(gatewayUrl)
-                    .get()
+                    .post()
                     .uri("/push_messages")
                     .retrieve()
                     .bodyToMono(String.class)

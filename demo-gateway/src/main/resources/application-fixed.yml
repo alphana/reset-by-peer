@@ -7,7 +7,7 @@ spring:
       httpclient:
         connect-timeout: 5000
         response-timeout: 60s
-        wiretap: true
+#        wiretap: true
         pool:
           max-idle-time: 60s
           max-connections: 500
@@ -15,9 +15,9 @@ spring:
           metrics: true
           max-life-time: 60s
           max-pending-acquires: 2048
-          acquire-timeout: 60s
+          acquire-timeout: 60000
       httpserver:
-        wiretap: true
+#        wiretap: true
         max-initial-line-length: 10485760
         max-header-size: 65536
         max-chunk-size: 10485760

@@ -74,6 +74,7 @@ public class GatewayConfigFixed {
                         (httpClientRequest, throwable) -> log.error("Connection error occurred in resilient client", throwable),
                         (httpClientResponse, throwable) -> log.error("Connection error occurred in resilient client", throwable)
                 )
-                .wiretap(true);
+//                .wiretap(true)
+                ;
     }
 }
